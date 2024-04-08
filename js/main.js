@@ -100,29 +100,29 @@ const euro_a_dolar = (euros) => euros * EURO_DOLAR;
 const euro_a_yen = (euros) => euros * EURO_YEN;
 
 const conversion = (euros, moneda) => {
-    //moneda = {"libra", "dolar", "yen"}
+    // modeda = {"libra", "dolar", "yen"}
+
     switch (moneda) {
         case "libra":
-            let libras = euro_a_libra(euros)
-            console.log(libras);
+            let libras = euro_a_libra(euros);
+            console.log(libras.toFixed(2));
             break;
-        case "dolares":
-            let dolares = euro_a_dolar(euros)
-            console.log(dolares);
+        case "dolar":
+            let dolares = euro_a_dolar(euros);
+            console.log(dolares.toFixed(2));
             break;
-        case "yenes":
-            let yenes = euro_a_yen(euros)
-            console.log(yenes);
+        case "yen":
+            let yenes = euro_a_yen(euros);
+            console.log(yenes.toFixed(2));
             break;
-
         default:
-            console.log("La moneda no és valida");
+            console.log("La moneda no es valida");
             break;
     }
 };
 
-let euros = prompt("Diga la cantidad de euros: ");
-let moneda = prompt("Diga la moneda ['libra', 'dolar', 'yen']: ");
-
+// Entrada de datos
+let euros = +prompt("Diga la cantidad de euros: ");
+let moneda = prompt('Diga la moneda ["libra", "dolar", "yen"]: ');
 
 conversion(euros, moneda);
